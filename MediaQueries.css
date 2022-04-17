@@ -1,0 +1,292 @@
+/* Media Queries do not respond to the font size setting in the HTML. We made 1rem = 1em = 10px in our HTML but in media queries 1rem will always be 16px which is the default value. */
+/* Some browsers have a bug when it comes to rem and that's why we use em instead of rem in media queries. em is similar to rem. In media queries 1rem = 1em = 16px */
+@media(max-width:84em) {
+    .hero {
+        max-width: 120rem;
+    }
+
+    .heading-primary {
+        font-size: 4.4rem;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Below 1200px (Small Laptops) */
+@media(max-width:75em) {
+    html {
+        font-size: 56.25%;
+    }
+
+    .heading-secondary {
+        font-size: 3.6rem;
+    }
+
+    .heading-tertiary {
+        font-size: 2.4rem;
+    }
+
+    .grid {
+        column-gap: 4.8rem;
+        row-gap: 6.4rem;
+    }
+
+    .header {
+        padding: 0 3.2rem;
+    }
+
+    .hero {
+        gap: 4.8rem;
+    }
+
+    .main-nav-list {
+        gap: 3.2rem;
+    }
+
+    .testimonials-container {
+        padding: 9.6rem 3.2rem;
+    }
+
+}
+
+/* Below 944 px(Tablets) */
+@media(max-width:59em) {
+    html {
+        font-size: 50%;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 0 8rem;
+        gap: 6.4rem;
+    }
+
+    .hero-image {
+        width: 60%;
+    }
+
+    .hero-image-box {
+        text-align: center;
+    }
+
+    .hero-text-box {
+        text-align: center;
+    }
+
+    .delivered-meals {
+        justify-content: center;
+        margin-top: 3.2rem;
+    }
+
+    .logos img {
+        height: 2.4rem;
+    }
+
+    .step-number {
+        font-size: 7.4rem;
+    }
+
+    .meal-content {
+        padding: 2.4rem 3.2rem 3.2rem 3.2rem;
+    }
+
+    .section-testimonials {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .cta-form {
+        grid-template-columns: 3fr 2fr;
+    }
+
+    .cta-form {
+        grid-template-columns: 1fr;
+    }
+
+    .btn--form {
+        margin-top: 1.2rem;
+    }
+
+    .btn-mobile-nav {
+        display: block;
+        z-index: 100;
+    }
+
+    .main-nav {
+        background-color: rgba(255, 255, 255, 0.6);
+        backdrop-filter:blur(10px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.5s ease-in;
+        transform: translate(100%, 0);
+        /* display:none; does not allow us to add animations hence we cannot use it.*/
+        /* display: none; */
+        /* Third value in transition defines the type of animation.If no value is defined then the default value(linear) will be applied. */
+
+        /*1)To hide visually */
+        opacity: 0;
+
+        /*2)To make it unaccesible to mouse and keyboard */
+        pointer-events: none;
+
+        /*3)To hide it from screen readers */
+        visibility: hidden;
+
+    }
+
+    .nav-open .main-nav {
+        opacity: 1;
+
+        /* To open the navigation which was closed above*/
+        pointer-events: auto;
+        visibility: visible;
+        transform: translate(0);
+    }
+
+    .main-nav-list {
+        flex-direction: column;
+        gap: 4.8rem;
+    }
+
+    .main-nav-link:link, .main-nav-link:visited {
+        font-size: 3rem;
+    }
+
+    .nav-open .icon-mobile-nav[name="close-outline"] {
+        /* Only if nav-open class exists then this rule will be applied and nav-open will exist only when navigation is open*/
+        display: block;
+    }
+
+    .nav-open .icon-mobile-nav[name="menu-outline"] {
+        display: none;
+    }
+
+}
+
+/* Below 704 px(Smaller Tablets) */
+@media(max-width:44em) {
+    .grid--3--cols, .grid--4--cols {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .diets {
+        grid-column: 1/-1;
+        justify-self: center;
+
+        box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+        border-radius: 1.1rem;
+        overflow: hidden;
+        padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+        /* transition: all 0.4s; */
+    }
+
+    .heading-secondary {
+        margin-bottom: 4.8rem;
+    }
+
+    .pricing-plan {
+        width: 100%;
+    }
+
+    .grid-footer {
+        grid-template-columns: repeat(6, 1fr) !important;
+    }
+
+    .nav-col {
+        grid-row: 1;
+        grid-column: span 2;
+        margin-bottom: 3.2rem;
+    }
+
+    .logo-col, .address-col {
+        grid-column: span 3;
+    }
+}
+
+/* Below 550px(Phones) */
+@media(max-width:34em) {
+    .grid {
+        row-gap: 4.8rem;
+    }
+
+    .grid--2--cols, .grid--3--cols, .grid--4--cols {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 0 3.2rem;
+    }
+
+    .section-hero {
+        background-color: #fdf2e9;
+        padding: 2.4rem 0 6.4rem 0;
+    }
+
+    .btn, .btn:link,
+    .btn:visited {
+        padding: 2.4rem 1.6rem;
+    }
+
+    .hero-image {
+        width: 80%;
+    }
+
+    .logos img {
+        height: 1.2rem;
+    }
+
+    .step-image-box:nth-child(2) {
+        /* The number "2" represents the number of children of the element and not the number of children having that class name.It represents the order of the child in the container. */
+        grid-row: 1;
+    }
+
+    .step-image-box:nth-child(6) {
+        grid-row: 5;
+    }
+    .step-image-box
+    {
+        transform: translate(0,25px);
+    }
+    .testimonials
+    {
+        grid-template-columns: 1fr;
+    }
+    .gallery
+    {
+        grid-template-columns: repeat(4,1fr);
+        gap: 1.2rem;
+    }
+    .cta
+    {
+        grid-template-columns: 1fr;
+    }
+    .cta-image-box
+    {
+        height: 32rem;
+        grid-row: 1;
+    }
+    .cta-text-box
+    {
+      padding: 3.2rem;  
+    }
+}
+
+/* Breakpoints for media queries are decided based on the point at which the design starts to break. */
+/* FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+-SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
